@@ -1,12 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Converto.id - Unit Converter</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .converter {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    input, select, button {
+      padding: 8px;
+      font-size: 14px;
+    }
+    input[readonly] {
+      background: #eee;
+    }
+    button {
+      background: #00BFA6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px 15px;
+    }
+    button:hover {
+      background: #009f8a;
+    }
+  </style>
 </head>
 <body>
-    
+
+  <h2>Converto.id - Unit Converter Panjang</h2>
+
+  <div class="converter">
+    <!-- Input angka -->
+    <input type="number" id="inputValue" placeholder="Masukkan angka">
+
+    <!-- Dropdown input unit -->
+    <select id="inputUnit">
+      <option value="m">Meter (m)</option>
+      <option value="km">Kilometer (km)</option>
+      <option value="cm">Sentimeter (cm)</option>
+      <option value="hm">Hektameter (Hm)</option>
+      <option value="mm">Milimeter (mm)</option>
+      <option value="ft">Kaki (ft)</option>
+    </select>
+
+    <!-- Output angka (readonly) -->
+    <input type="text" id="outputValue" readonly>
+
+    <!-- Dropdown output unit -->
+    <select id="outputUnit">
+      <option value="m">Meter (m)</option>
+      <option value="km">Kilometer (km)</option>
+      <option value="cm">Sentimeter (cm)</option>
+      <option value="hm">Hektameter (Hm)</option>
+      <option value="mm">Milimeter (mm)</option>
+      <option value="ft">Kaki (ft)</option>
+    </select>
+
+    <!-- Tombol konversi -->
+    <button onclick="convert()">Konversi</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
