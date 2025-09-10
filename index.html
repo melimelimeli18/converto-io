@@ -6,6 +6,7 @@
     <title>Converto</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo-small.png">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -16,7 +17,7 @@
 
         <!-- Button Navigasi -->
         <div class="tabs_sidebar">
-            <button class="tab_button" data-for-tab="1">Ukuran</button>
+            <button class="tab_button tab_button--active" data-for-tab="1">Ukuran</button>
             <button class="tab_button" data-for-tab="2">Temperatur</button>
             <button class="tab_button" data-for-tab="3">Waktu</button>
             <button class="tab_button" data-for-tab="4">Volume</button>
@@ -25,134 +26,144 @@
 
         <!-- Data Unit Panjang -->
         <div class="tab_content" data-tab="1">
-            <h1>Panjang</h1>
-            <span>Input</span><br>
-            <input type="number" id="panjang_input">
-            <select name="panjang" id="panjang">
-                <option value="mm_input" selected>Mm</option>
-                <option value="cm_input">Cm</option>
-                <option value="dm_input">Dm</option>
-                <option value="m_input">M</option>
-                <option value="dam_input">Dam</option>
-                <option value="hm_input">Hm</option>
-                <option value="km_input">Km</option>
-                <option value="ft_input">Ft</option>
-            </select><br>
-            <span>Output</span><br>
-            <span class="panjang_output">///////////////</span>
-            <select name="panjang" id="panjang">
-                <option value="mm_output" selected>Mm</option>
-                <option value="cm_output">Cm</option>
-                <option value="dm_output">Dm</option>
-                <option value="m_output">M</option>
-                <option value="dam_output">Dam</option>
-                <option value="hm_output">Hm</option>
-                <option value="km_output">Km</option>
-                <option value="ft_output">Ft</option>
-            </select><br>
-            <button value="submit">Convert</button>
+            <h1>Panjang</h1><br>
+            <div class="isi">
+                <span>Input</span><br>
+                <input type="number" id="panjang_input">
+                <select id="panjang_input_select">
+                    <option value="mm_input" selected>Mm</option>
+                    <option value="cm_input">Cm</option>
+                    <option value="dm_input">Dm</option>
+                    <option value="m_input">M</option>
+                    <option value="dam_input">Dam</option>
+                    <option value="hm_input">Hm</option>
+                    <option value="km_input">Km</option>
+                    <option value="ft_input">Ft</option>
+                </select><br><br>
+                <span>Output</span><br>
+                <span id="panjang_output">///////////////</span>
+                <select id="panjang_output_select">
+                    <option value="mm_output" selected>Mm</option>
+                    <option value="cm_output">Cm</option>
+                    <option value="dm_output">Dm</option>
+                    <option value="m_output">M</option>
+                    <option value="dam_output">Dam</option>
+                    <option value="hm_output">Hm</option>
+                    <option value="km_output">Km</option>
+                    <option value="ft_output">Ft</option>
+                </select><br><br>
+                <button value="submit">Convert</button>
+            </div>
         </div>
 
         <!-- Data Unit Temperatur -->
-        <div class="tab_content" data-tab="2">
-            <h1>Temperatur</h1>
-            <span>Input</span><br>
-            <input type="number" id="temperatur_input">
-            <select name="temperatur" id="temperatur">
-                <option value="celcius_input" selected>Celcius</option>
-                <option value="kelvin_input">Kelvin</option>
-                <option value="fahrenheit_input">Fahrenheit</option>
-                <option value="reamur_input">Reamur</option>
-            </select><br>
-            <span>Output</span><br>
-            <span class="temperatur_output">///////////////</span>
-            <select name="temperatur" id="temperatur">
-                <option value="celcius_output"selected>Celcius</option>
-                <option value="kelvin_output">Kelvin</option>
-                <option value="fahrenheit_output">Fahrenheit</option>
-                <option value="reamur_output">Reamur</option>
-            </select><br>
-            <button value="submit">Convert</button>
+        <div class="tab_content  tab_content--active" data-tab="2">
+            <h1>Temperatur</h1><br>
+            <div class="isi">
+                <span>Input</span><br>
+                <input type="number" id="temperatur_input">
+                <select id="temperatur_input_select">
+                    <option value="celcius_input" selected>Celcius</option>
+                    <option value="kelvin_input">Kelvin</option>
+                    <option value="fahrenheit_input">Fahrenheit</option>
+                    <option value="reamur_input">Reamur</option>
+                </select><br><br>
+                <span>Output</span><br>
+                <span id="temperatur_output">///////////////</span>
+                <select id="temperatur_output_select">
+                    <option value="celcius_output"selected>Celcius</option>
+                    <option value="kelvin_output">Kelvin</option>
+                    <option value="fahrenheit_output">Fahrenheit</option>
+                    <option value="reamur_output">Reamur</option>
+                </select><br><br>
+                <button value="submit">Convert</button>
+            </div>
         </div>
 
         <!-- Data Unit Waktu -->
         <div class="tab_content" data-tab="3">
-            <h1>Waktu</h1>
-            <span>Input</span><br>
-            <input type="number" class="waktu_input">
-            <select name="waktu" id="waktu">
-                <option value="detik_input" selected>Detik</option>
-                <option value="menit_input">Menit</option>
-                <option value="jam_input">Jam</option>
-                <option value="hari_input">Hari</option>
-                <option value="minggu_input">Minggu</option>
-                <option value="bulan_input">Bulan</option>
-                <option value="tahun_input">Tahun</option>
-            </select><br>
-            <span>Output</span><br>
-            <span class="waktu_output">///////////////</span>
-            <select name="waktu" id="waktu">
-                <option value="detik_output" selected>Detik</option>
-                <option value="menit_output">Menit</option>
-                <option value="jam_output">Jam</option>
-                <option value="hari_output">Hari</option>
-                <option value="minggu_output">Minggu</option>
-                <option value="bulan_output">Bulan</option>
-                <option value="tahun_output">Tahun</option>
-            </select><br>
-            <button value="submit">Convert</button>
+            <h1>Waktu</h1><br>
+            <div class="isi">
+                <span>Input</span><br>
+                <input type="number" class="waktu_input">
+                <select id="waktu_input_select">
+                    <option value="detik_input" selected>Detik</option>
+                    <option value="menit_input">Menit</option>
+                    <option value="jam_input">Jam</option>
+                    <option value="hari_input">Hari</option>
+                    <option value="minggu_input">Minggu</option>
+                    <option value="bulan_input">Bulan</option>
+                    <option value="tahun_input">Tahun</option>
+                </select><br><br>
+                <span>Output</span><br>
+                <span id="waktu_output">///////////////</span>
+                <select id="waktu_output_select">
+                    <option value="detik_output" selected>Detik</option>
+                    <option value="menit_output">Menit</option>
+                    <option value="jam_output">Jam</option>
+                    <option value="hari_output">Hari</option>
+                    <option value="minggu_output">Minggu</option>
+                    <option value="bulan_output">Bulan</option>
+                    <option value="tahun_output">Tahun</option>
+                </select><br><br>
+                <button value="submit">Convert</button>
+            </div>
         </div>
 
         <!-- Data Unit Volume -->
         <div class="tab_content" data-tab="4">
-            <h1>Volume</h1>
-            <span>Input</span><br>
-            <input type="number" class="volume_input">
-            <select name="volume" id="volume">
-                <option value="mm3_input" selected>Mm&#179;</option>
-                <option value="cm3_input">Cm&#179;</option>
-                <option value="m3_input">M&#179;</option>
-                <option value="km3_input">Km&#179;</option>
-                <option value="ml_input">Ml</option>
-                <option value="l_input">L</option>
-            </select><br>
-            <span>Output</span><br>
-            <span class="volume_output">///////////////</span>
-            <select name="volume" id="volume">
-                <option value="mm3_output" selected>Mm&#179;</option>
-                <option value="cm3_output">Cm&#179;</option>
-                <option value="m3_output">M&#179;</option>
-                <option value="km3_output">Km&#179;</option>
-                <option value="ml_output">Ml</option>
-                <option value="l_output">L</option>
-            </select><br>
-            <button value="submit">Convert</button>
+            <h1>Volume</h1><br>
+            <div class="isi">
+                <span>Input</span><br>
+                <input type="number" class="volume_input">
+                <select id="volume_input_select">
+                    <option value="mm3_input" selected>Mm&#179;</option>
+                    <option value="cm3_input">Cm&#179;</option>
+                    <option value="m3_input">M&#179;</option>
+                    <option value="km3_input">Km&#179;</option>
+                    <option value="ml_input">Ml</option>
+                    <option value="l_input">L</option>
+                </select><br><br>
+                <span>Output</span><br>
+                <span id="volume_output">///////////////</span>
+                <select id="volume_output_select">
+                    <option value="mm3_output" selected>Mm&#179;</option>
+                    <option value="cm3_output">Cm&#179;</option>
+                    <option value="m3_output">M&#179;</option>
+                    <option value="km3_output">Km&#179;</option>
+                    <option value="ml_output">Ml</option>
+                    <option value="l_output">L</option>
+                </select><br><br>
+                <button value="submit">Convert</button>
+            </div>
         </div>
 
         <!-- Data Unit Luas -->
          <div class="tab_content" data-tab="5">
-            <h1>Luas</h1>
-            <span>Input</span><br>
-            <input type="number" class="luas_input">
-            <select name="luas" id="luas">
-                <option value="mm2_input" selected>Mm&#178;</option>
-                <option value="cm2_input">Cm&#178;</option>
-                <option value="dm2_input">Dm&#178;</option>
-                <option value="m2_input">M&#178;</option>
-                <option value="dam2_input">Dam&#178;</option>
-                <option value="km2_input">Km&#178;</option>
-            </select><br>
-            <span>Output</span><br>
-            <span class="ukuran_output">///////////////</span>
-            <select name="luas" id="luas">
-                <option value="mm2_output">Mm&#178;</option>
-                <option value="cm2_output">Cm&#178;</option>
-                <option value="dm2_output">Dm&#178;</option>
-                <option value="m2_output">M&#178;</option>
-                <option value="dam2_output">Dam&#178;</option>
-                <option value="km2_output">Km&#178;</option>
-            </select><br>
-            <button value="submit">Convert</button>
+            <h1>Luas</h1><br>
+            <div class="isi">
+                <span>Input</span><br>
+                <input type="number" class="luas_input">
+                <select id="luas_input_select">
+                    <option value="mm2_input" selected>Mm&#178;</option>
+                    <option value="cm2_input">Cm&#178;</option>
+                    <option value="dm2_input">Dm&#178;</option>
+                    <option value="m2_input">M&#178;</option>
+                    <option value="dam2_input">Dam&#178;</option>
+                    <option value="km2_input">Km&#178;</option>
+                </select><br><br>
+                <span>Output</span><br>
+                <span id="ukuran_output">///////////////</span>
+                <select id="luas_input_select">
+                    <option value="mm2_output">Mm&#178;</option>
+                    <option value="cm2_output">Cm&#178;</option>
+                    <option value="dm2_output">Dm&#178;</option>
+                    <option value="m2_output">M&#178;</option>
+                    <option value="dam2_output">Dam&#178;</option>
+                    <option value="km2_output">Km&#178;</option>
+                </select><br><br>
+                <button value="submit">Convert</button>
+            </div>
         </div>
     </div>
 </body>
