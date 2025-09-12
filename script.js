@@ -14,15 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const lengthFactors = {m:1, km:1000, cm:0.01, hm:100, mm:0.001, ft:0.3048};
+    const lengthFactors = {m:1, mm:0.001, cm:0.01, dm:0.1 , dam:10 , hm:100, km:1000, ft:0.3048};
     const timeFactors = {s:1, min:60, h:3600, d:86400, week:604800, month:2629800, year:31557600};
-    const volumeFactors = {L:1, mL:0.001, cL:0.01, dL:0.1, m3:1000, cm3:0.001, mm3:0.000001};
-    const areaFactors = {m2:1, km2:1e6, hm2:10000, dam2:100, dm2:0.01, cm2:0.0001, mm2:0.000001};
+    const volumeFactors = {L:1, mL:0.001, cL:0.01, dL:0.1, mm3:0.000001, cm3:0.001, m3:1000};
+    const areaFactors = {m2:1, mm2:0.000001, cm2:0.0001, dm2:0.01, dam2:100, hm2:10000, km2:1e6};
+    const massaFactors = {g:1, mg:0.001, cg:0.01, dg:0.1, dag:10, hg:100, kg:1000, ton:1000000};
 
     function convertLength(value, from, to){ return value*lengthFactors[from]/lengthFactors[to]; }
     function convertTime(value, from, to){ return value*timeFactors[from]/timeFactors[to]; }
     function convertVolume(value, from, to){ return value*volumeFactors[from]/volumeFactors[to]; }
     function convertArea(value, from, to){ return value*areaFactors[from]/areaFactors[to]; }
+    function convertMassa(value, from, to){ return value*massaFactors[from]/massaFactors[to]; }
     function convertTemperature(value, from, to){
         let c;
         if(from==="C") c=value;
@@ -74,5 +76,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const to = document.querySelector(".area_output_unit").value;
         if(isNaN(input)) return alert("Masukkan angka valid!");
         document.querySelector(".area_output").innerText = convertArea(input, from, to);
+    });
+
+    document.querySelector(".massa_convert_btn").addEventListener("click", ()=>{
+        const input = parseFloat(document.querySelector(".massa_input").value);
+        const from = document.querySelector(".massa_input_unit").value;
+        const to = document.querySelector(".massa_output_unit").value;
+        if(isNaN(input)) return alert("Masukkan angka valid!");
+        document.querySelector(".massa_output").innerText = convertMassa(input, from, to);
     });
 });

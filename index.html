@@ -17,11 +17,12 @@
     <div class="tabs">
         <!-- Sidebar -->
         <div class="tabs_sidebar">
-            <button class="tab_button tab_button--active" data-for-tab="1">Ukuran</button>
-            <button class="tab_button" data-for-tab="2">Temperatur</button>
-            <button class="tab_button" data-for-tab="3">Waktu</button>
-            <button class="tab_button" data-for-tab="4">Volume</button>
-            <button class="tab_button" data-for-tab="5">Luas</button>
+            <button class="tab_button tab_button--active" data-for-tab="1">Panjang</button>
+            <button class="tab_button" data-for-tab="2">Luas</button>
+            <button class="tab_button" data-for-tab="3">Volume</button>
+            <button class="tab_button" data-for-tab="4">Temperatur</button>
+            <button class="tab_button" data-for-tab="5">Waktu</button>
+            <button class="tab_button" data-for-tab="6">Massa</button>
         </div>
 
         <!--Panjang -->
@@ -56,62 +57,36 @@
             </div>
         </div>
 
-        <!-- Temperatur -->
+        <!-- Tab Content Luas -->
         <div class="tab_content" data-tab="2">
-            <h1>Temperatur</h1>
+            <h1>Luas</h1>
             <div class="isi">
                 <span>Input</span><br>
-                <input type="number" class="temp_input">
-                <select class="temp_input_unit">
-                    <option value="C" selected>Celcius</option>
-                    <option value="K">Kelvin</option>
-                    <option value="F">Fahrenheit</option>
-                    <option value="R">Reamur</option>
+                <input type="number" class="area_input">
+                <select class="area_input_unit">
+                    <option value="mm2">mm²</option>
+                    <option value="cm2">cm²</option>
+                    <option value="dm2">dm²</option>
+                    <option value="m2" selected>m²</option>
+                    <option value="dam2">dam²</option>
+                    <option value="km2">km²</option>
                 </select><br><br>
                 <span>Output</span><br>
-                <span class="temp_output">-</span>
-                <select class="temp_output_unit">
-                    <option value="C" selected>Celcius</option>
-                    <option value="K">Kelvin</option>
-                    <option value="F">Fahrenheit</option>
-                    <option value="R">Reamur</option>
+                <span class="area_output">-</span>
+                <select class="area_output_unit">
+                    <option value="mm2">mm²</option>
+                    <option value="cm2">cm²</option>
+                    <option value="dm2">dm²</option>
+                    <option value="m2" selected>m²</option>
+                    <option value="dam2">dam²</option>
+                    <option value="km2">km²</option>
                 </select><br><br>
-                <button class="temp_convert_btn">Convert</button>
-            </div>
-        </div>
-
-        <!-- Waktu -->
-        <div class="tab_content" data-tab="3">
-            <h1>Waktu</h1>
-            <div class="isi">
-                <span>Input</span><br>
-                <input type="number" class="time_input">
-                <select class="time_input_unit">
-                    <option value="s" selected>Detik</option>
-                    <option value="min">Menit</option>
-                    <option value="h">Jam</option>
-                    <option value="d">Hari</option>
-                    <option value="week">Minggu</option>
-                    <option value="month">Bulan</option>
-                    <option value="year">Tahun</option>
-                </select><br><br>
-                <span>Output</span><br>
-                <span class="time_output">-</span>
-                <select class="time_output_unit">
-                    <option value="s" selected>Detik</option>
-                    <option value="min">Menit</option>
-                    <option value="h">Jam</option>
-                    <option value="d">Hari</option>
-                    <option value="week">Minggu</option>
-                    <option value="month">Bulan</option>
-                    <option value="year">Tahun</option>
-                </select><br><br>
-                <button class="time_convert_btn">Convert</button>
+                <button class="area_convert_btn">Convert</button>
             </div>
         </div>
 
         <!-- Volume -->
-        <div class="tab_content" data-tab="4">
+        <div class="tab_content" data-tab="3">
             <h1>Volume</h1>
             <div class="isi">
                 <span>Input</span><br>
@@ -140,33 +115,92 @@
             </div>
         </div>
 
-        <!-- Tab Content Luas -->
-        <div class="tab_content" data-tab="5">
-            <h1>Luas</h1>
+        <!-- Temperatur -->
+        <div class="tab_content" data-tab="4">
+            <h1>Temperatur</h1>
             <div class="isi">
                 <span>Input</span><br>
-                <input type="number" class="area_input">
-                <select class="area_input_unit">
-                    <option value="mm2">mm²</option>
-                    <option value="cm2">cm²</option>
-                    <option value="dm2">dm²</option>
-                    <option value="m2" selected>m²</option>
-                    <option value="dam2">dam²</option>
-                    <option value="km2">km²</option>
+                <input type="number" class="temp_input">
+                <select class="temp_input_unit">
+                    <option value="C" selected>Celcius</option>
+                    <option value="K">Kelvin</option>
+                    <option value="F">Fahrenheit</option>
+                    <option value="R">Reamur</option>
                 </select><br><br>
                 <span>Output</span><br>
-                <span class="area_output">-</span>
-                <select class="area_output_unit">
-                    <option value="mm2">mm²</option>
-                    <option value="cm2">cm²</option>
-                    <option value="dm2">dm²</option>
-                    <option value="m2" selected>m²</option>
-                    <option value="dam2">dam²</option>
-                    <option value="km2">km²</option>
+                <span class="temp_output">-</span>
+                <select class="temp_output_unit">
+                    <option value="C" selected>Celcius</option>
+                    <option value="K">Kelvin</option>
+                    <option value="F">Fahrenheit</option>
+                    <option value="R">Reamur</option>
                 </select><br><br>
-                <button class="area_convert_btn">Convert</button>
+                <button class="temp_convert_btn">Convert</button>
             </div>
         </div>
+
+        <!-- Waktu -->
+        <div class="tab_content" data-tab="5">
+            <h1>Waktu</h1>
+            <div class="isi">
+                <span>Input</span><br>
+                <input type="number" class="time_input">
+                <select class="time_input_unit">
+                    <option value="s" selected>Detik</option>
+                    <option value="min">Menit</option>
+                    <option value="h">Jam</option>
+                    <option value="d">Hari</option>
+                    <option value="week">Minggu</option>
+                    <option value="month">Bulan</option>
+                    <option value="year">Tahun</option>
+                </select><br><br>
+                <span>Output</span><br>
+                <span class="time_output">-</span>
+                <select class="time_output_unit">
+                    <option value="s" selected>Detik</option>
+                    <option value="min">Menit</option>
+                    <option value="h">Jam</option>
+                    <option value="d">Hari</option>
+                    <option value="week">Minggu</option>
+                    <option value="month">Bulan</option>
+                    <option value="year">Tahun</option>
+                </select><br><br>
+                <button class="time_convert_btn">Convert</button>
+            </div>
+        </div>
+
+        <div class="tab_content" data-tab="6">
+            <h1>Massa</h1>
+            <div class="isi">
+                <span>Input</span><br>
+                <input type="number" class="massa_input">
+                <select class="massa_input_unit">
+                    <option value="mg">mg</option>
+                    <option value="cg">cg</option>
+                    <option value="dg">dg</option>
+                    <option value="g">g</option>
+                    <option value="dag">dag</option>
+                    <option value="hg">hg</option>
+                    <option value="hg">hg</option>
+                    <option value="kg">kg</option>
+                    <option value="ton">ton</option>
+                </select><br><br>
+                <span>Output</span><br>
+                <span class="massa_output">-</span>
+                <select name="" id="" class="massa_output_unit">
+                    <option value="mg">mg</option>
+                    <option value="cg">cg</option>
+                    <option value="dg">dg</option>
+                    <option value="g">g</option>
+                    <option value="dag">dag</option>
+                    <option value="hg">hg</option>
+                    <option value="kg">kg</option>
+                    <option value="ton">ton</option>
+                </select><br><br>
+                <button class="massa_convert_btn">Convert</button></div>
+        </div>
+
+        
     </div>
 </body>
 </html>
